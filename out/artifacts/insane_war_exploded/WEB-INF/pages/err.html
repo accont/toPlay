@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<link href="/assets/bootstrap/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet" />
+<link href="/asstes/plugins/css/framework.css" type="text/css" rel="stylesheet" >
+<link href="/asstes/plugins/css/style.css" type="text/css" rel="stylesheet" >
+
+<script type="text/javascript" src="/asstes/plugins/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/asstes/plugins/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/asstes/plugins/js/app.js"></script>
+<script type="text/javascript" src="/asstes/plugins/js/libs.js"></script>
+<script>
+   /* $(function(){
+       check();
+    });*/
+    function check(){
+        var v = false;
+        var name = document.getElementById("name").value; //$("#name").val();//
+        var password = document.getElementById("password").value;//$("#password").val();// ;
+        alert(name.toString()+"\t"+password.toString());
+        if(name.toString() == "admin" && password.toString() == "123"){
+            alert("false");
+            return v;
+        }else{
+            alert("true");
+            v = true;
+            return v;
+        }
+    }
+</script>
+
+<body>
+
+
+
+<h3> 到这里来了的，都是错误的 ~~~！</h3>
+<form role="form" id="form" onsubmit="check()">
+    <div class="form-group">
+        <input id="name" name="name" type="text" placeholder="输入用户名">
+    </div>
+    <div class="form-group">
+        <input id="password" name="password" type="password" placeholder="输入密码">
+    </div>
+    <input id="sub"  class="btn btn-default" type="submit" value="提交">
+</form>
+</body>
+</html>

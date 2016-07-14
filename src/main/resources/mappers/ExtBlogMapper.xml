@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.ExtBlogMapper" >
+    <resultMap id="BaseResultMap" type="com.mybatis.pojo.ExtBlog" >
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <id column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="push_date" jdbcType="TIMESTAMP" property="pushDate" />
+        <result column="type" jdbcType="VARCHAR" property="type" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+
+        <result column="thumb" jdbcType="INTEGER" property="thumb"/>
+        <result column="step" jdbcType="INTEGER" property="step"/>
+
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+        <result column="addrees" jdbcType="VARCHAR" property="addrees" />
+        <result column="contact" jdbcType="VARCHAR" property="contact" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="remark" jdbcType="VARCHAR" property="remark" />
+        <result column="role" jdbcType="VARCHAR" property="role" />
+        <result column="permissions" jdbcType="VARCHAR" property="permissions" />
+
+        </resultMap>
+
+    <sql id="Base_Column_List">
+        blg.id, user.username, user.password, user.name, user.telephone, user.addrees,
+        user.contact, user.email, user.remark, user.role, user.permissions,
+        blg.user_id, blg.title, blg.push_date, blg.type, blg.update_time,blg.message
+    </sql>
+
+    <select id="getList" resultMap="BaseResultMap" parameterType="map">
+        select
+        SUM(ud.`Thumb`) thumb,
+        SUM(ud.`Step`) step,
+        <include refid="Base_Column_List" />
+        FROM
+        t_sys_user USER
+        LEFT JOIN t_sys_blog blg
+        ON blg.user_id = user.id
+        LEFT JOIN t_sys_updown ud
+        ON blg.`id` = ud.`blog_id`
+        GROUP BY blg.id
+        ORDER BY push_date DESC
+        limit #{start,jdbcType=INTEGER} , #{end,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectCount" resultType="java.lang.Integer">
+        select COUNT(*)
+        from t_sys_user user ,t_sys_blog blg
+        where blg.user_id = user.id
+    </select>
+
+    <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+       SELECT * FROM t_sys_user  USER,t_sys_blog blog
+       WHERE  user.id = blog.user_id
+       AND blog.id = #{id ,jdbcType=INTEGER}
+    </select>
+
+
+    </mapper>

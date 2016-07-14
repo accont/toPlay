@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link href="/asstes/plugins/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/asstes/plugins/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/asstes/plugins/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+
+           // getUser();
+            getSession();
+            $("#msg2").html("进入函数了");
+            $.ajax({
+                url:"/blg/getUser",
+                type:"post",
+                dataType:"json",
+                success:function(data){
+                    $("#msg1").html("成功了");
+                    $("#msg").html(data);
+                    alert(data);
+                }
+            });
+
+        });
+
+        function getSession(){
+            $.ajax({
+                url:"/blg/getSession",
+                type:"post",
+                dataType:"json",
+                success:function(data){
+                    if(data == 1){
+                        window.location = "http://localhost:8080";
+                    }
+                }
+            })
+            }
+
+
+    </script>
+</head>
+<body>
+<h3>欢迎你:</h3>
+<span id="msg"></span>
+<span id="msg1"></span>
+<span id="msg2"></span>
+</body>
+</html>

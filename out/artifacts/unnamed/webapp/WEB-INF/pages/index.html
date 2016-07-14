@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>blogger主页君</title>
+
+    <link href="/asstes/plugins/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="/asstes/plugins/css/framework.css" type="text/css" rel="stylesheet" >
+    <link href="/asstes/plugins/css/style.css" type="text/css" rel="stylesheet" >
+
+    <script type="text/javascript" src="/asstes/plugins/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/asstes/plugins/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/asstes/plugins/js/app.js"></script>
+    <script type="text/javascript" src="/asstes/plugins/js/libs.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+<!-- 页面包含 -->
+<iframe src="http://localhost:8080/heading" scrolling="no" frameborder="0" height="100%"
+        width="100%" allowtransparency="true"  border="0" style="width:100%"></iframe>
+
+<div id='header'>
+   <!-- <div class='row'>
+        <div class='twelve columns'>
+            <div class='mod modLogo'>
+                <h1><a href="index-2.html">Bella Studio</a></h1>
+                <h2 class='tagline'>
+                    We design and develop beautiful websites
+                </h2>
+            </div>
+        </div>
+    </div>-->
+    <div class='mod modNav'>
+        <div class='show-for-small'>
+            <a class="toggle" href="#">Toggle</a>
+        </div>
+        <div class='wrapper'>
+            <ul class='nav-bar'>
+                <li>
+                    <a class="main" href="index-2.html">Home</a>
+                    <div class='flyout'>
+                        <ul class='sub'>
+                            <li>
+                                <a href="index-2.html">Home default</a>
+                            </li>
+                            <li>
+                                <a href="home-extended.html">Home extended 1</a>
+                            </li>
+                            <li>
+                                <a href="home-extended-2.html">Home extended 2</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="main" href="works.html">Work</a>
+                    <div class='flyout'>
+                        <ul class='sub'>
+                            <li>
+                                <a href="works.html">All works</a>
+                            </li>
+                            <li>
+                                <a href="case.html">Case study</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="main" href="services.html">Services</a>
+                    <div class='flyout'>
+                        <ul class='sub'>
+                            <li>
+                                <a href="services.html">services default</a>
+                            </li>
+                            <li>
+                                <a href="services-one-column.html">services one column</a>
+                            </li>
+                            <li>
+                                <a href="services-two-columns.html">services two columns</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="main" href="about.html">Pages</a>
+                    <div class='flyout'>
+                        <ul class='sub'>
+                            <li>
+                                <a href="about.html">About</a>
+                            </li>
+                            <li>
+                                <a href="shortcode.html">Shortcode</a>
+                            </li>
+                            <li>
+                                <a href="category.html">Category page</a>
+                            </li>
+                            <li>
+                                <a href="archive.html">Archive page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="main current" href="blog.html">Blog</a>
+                    <div class='flyout'>
+                        <ul class='sub'>
+                            <li>
+                                <a href="blog.html">Our blog</a>
+                            </li>
+                            <li>
+                                <a href="single.html">Blog single page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="main" href="/account">Account</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!--<button class="btn btn-primary" data-toggle="modal" data-target="#modalFina">Login</button>
+
+<div class="modal fade" id="modalFina" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-hidden="true" > &times;</button>
+                <h4 class="modal-title" id="modalTitle"> ADD ABOUT YOU SOMETHING</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>-->
+
+
+<!--
+<form class="form-horizontal" role="form" action="/login" method="post">
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="name">user</label>
+        <div class="col-md-8">
+            <input class="form-control " name="name" id="name" type="text" placeholder="you username">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="password">password</label>
+        <div class="col-md-8">
+            <input class="form-control" name="password" id="password" type="password" placeholder="you password">
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <input type="submit" value="submit" class="btn btn-primary" data-dismiss="modal"/>
+        <button class="btn btn-default" data-dismiss="modal" type="button">close</button>
+    </div>
+</form>-->
+
+
+
+<form action="/doUpload" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <input class="col-sm-2 form-control" name="file" type="file" placeholder="check you file">
+    </div>
+    <input type="submit" value="submit" class="btn btn-primary" />
+</form>
+
+
+<form action="/doDownload" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <input class="col-sm-2 form-control" name="fileName" type="file" placeholder="to do download">
+    </div>
+    <input type="submit" value="submit" class="btn btn-primary" />
+</form>
+<a href="/account">test</a>
+<form action="/account">
+    <input type="submit" class="btn btn-default" value="跳吧">
+</form>
+<iframe src="http://localhost:8080/copyright" scrolling="no" frameborder="0" height="100%"
+        width="100%" allowtransparency="true"  border="0" style="width:100%"></iframe>
+</body>
+</html>

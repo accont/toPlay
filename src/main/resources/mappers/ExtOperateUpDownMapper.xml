@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.ExtOperateUpDownMapper" >
+    <resultMap id="BaseResultMap" type="com.mybatis.pojo.OperateUpDown">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <id column="u_id" jdbcType="INTEGER" property="uId" />
+        <id column="blog_id" jdbcType="INTEGER" property="blogId" />
+        <result column="up_ip" jdbcType="VARCHAR" property="upIp"/>
+        <result column="down_ip" jdbcType="VARCHAR" property="downIp"/>
+        <result column="thumb" jdbcType="INTEGER" property="thumb"/>
+        <result column="step" jdbcType="INTEGER" property="step"/>
+    </resultMap>
+
+    <select id="selectCount" resultMap="BaseResultMap" parameterType="map">
+        SELECT * FROM t_sys_updown
+        WHERE up_ip = #{upIp,jdbcType = VARCHAR}
+        AND blog_id = #{blogId,jdbcType = INTEGER}
+        AND down_ip = #{downIp,jdbcType = VARCHAR}
+    </select>
+
+    <insert id="insertThumb" parameterType="com.mybatis.pojo.OperateUpDown">
+      insert into t_sys_updown (down_ip,up_ip,blog_id,thumb,step) values(#{downIp,jdbcType = VARCHAR},#{upIp,jdbcType = VARCHAR},
+        #{blogId,jdbcType = INTEGER},#{thumb,jdbcType = INTEGER},
+        #{step,jdbcType = INTEGER})
+    </insert>
+
+    <insert id="insertStep" parameterType="com.mybatis.pojo.OperateUpDown">
+        insert into t_sys_updown (down_ip,up_ip,blog_id,thumb,step) values(#{downIp,jdbcType = VARCHAR},#{upIp,jdbcType = VARCHAR},
+        #{blogId,jdbcType = INTEGER},#{thumb,jdbcType = INTEGER},
+        #{step,jdbcType = INTEGER})
+    </insert>
+
+    <select id="selectThumb" resultMap="BaseResultMap" parameterType="map">
+        SELECT * from t_sys_updown
+        where up_ip = #{upIp,jdbcType = VARCHAR}
+        AND blog_id = #{blogId,jdbcType = INTEGER}
+    </select>
+
+    <select id="selectStep" resultMap="BaseResultMap" parameterType="map">
+        SELECT * FROM t_sys_updown
+        where down_ip = #{downIp,jdbcType = VARCHAR}
+        AND blog_id = #{blogId,jdbcType = INTEGER}
+    </select>
+
+    <update id="updateThumb" >
+        update t_sys_updown thumb = (thumb+1)
+    </update>
+
+    <update id="updateStep">
+        UPDATE t_sys_updown step = (step+1)
+    </update>
+
+
+    </mapper>

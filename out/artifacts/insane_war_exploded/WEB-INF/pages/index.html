@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>blogger主页君</title>
+
+    <link href="/assets/css/style1.css" rel="stylesheet" type="text/css">
+    <link href="/assets/ico/apple-touch-icon-57-precomposed.png" rel="shortcut icon">
+    <link href="/assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/bootstrap/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet" />
+    <link href="/asstes/plugins/css/framework.css" type="text/css" rel="stylesheet" >
+    <link href="/asstes/plugins/css/style.css" type="text/css" rel="stylesheet" >
+    <link href="/assets/css/Pager.css" rel="stylesheet" type="text/css">
+    <link href="/assets/ico/player-graphics.gif">
+
+    <script type="text/javascript" src="/asstes/plugins/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.let_it_snow.js"></script>
+    <script type="text/javascript" src="/asstes/plugins/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/asstes/plugins/js/app.js"></script>
+    <script type="text/javascript" src="/asstes/plugins/js/libs.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.pager.js"></script>
+    <script tyle="text/javascript" src="/assets/js/audio.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $("canvas.flare").let_it_snow({
+                windPower: 0,
+                speed: 0,
+                color: "#392F52",
+                size:120,
+                opacity: 0.00000001,
+                count: 0,
+                interaction: false
+            });
+
+            $("canvas.snow").let_it_snow({
+                windPower: 3,
+                speed: 1,
+                count: 250,
+                size: 0
+            });
+
+            $("canvas.flake").let_it_snow({
+                windPower: -3,
+                speed: 1,
+                count: 20,
+                size: 10,
+                image:"/assets/img/backgrounds/white-snowflake.png"
+            });
+
+        });
+    </script>
+    <style>
+        p{
+            font-family: "Courier New", Courier, monospace;
+            font-size: x-large;
+            color: #1fad83;
+            margin: 30px;
+        }
+    </style>
+
+</head>
+<body style="background: #02243C">
+<!-- 页面包含 -->
+<iframe src="http://localhost:8080/heading" scrolling="no" frameborder="0" height="31%"
+        width="100%" allowtransparency="true"  border="0" style="width:100%"></iframe>
+
+<div id="pager"></div>
+
+<div id='header' >
+
+   <!-- <div class='row'>
+        <div class='twelve columns'>
+            <div class='mod modLogo'>
+                <h1><a href="index-2.html">Bella Studio</a></h1>
+                <h2 class='tagline'>
+                    We design and develop beautiful websites
+                </h2>
+            </div>
+        </div>
+    </div>-->
+    <div class='mod modNav' style="background: #02243C;margin-top: -50px" >
+        <div class='show-for-small'>
+            <a class="toggle" href="#">Toggle</a>
+        </div>
+        <div class='wrapper'>
+            <ul class='nav-bar'>
+                <li>
+                    <a class="main" style="background-color: seashell" href="#">Home</a>
+                </li>
+
+                <li>
+                    <a class="main" style="background-color: seashell" href="#">Services</a>
+                </li>
+                <li>
+                    <a class="main" style="background-color: seashell" href="/blg/toList">写博文</a>
+                </li>
+                <li>
+                    <a class="main" style="background-color: seashell" href="/blg/list">Blog</a>
+
+                  <!--  <div class='flyout'>
+                        <ul class='sub'>
+                            <li>
+                                <a href="/blg/toList" >写博文</a>
+                            </li>
+                        </ul>
+                    </div>-->
+                </li>
+                <li>
+                    <a class="main" style="background-color: seashell" href="/account" target="_blank">Account</a>
+                </li>
+                <!--<li style="height: 46.4px;">
+                    <a class="main current" href="#">
+                        <button  type="button " class="btn btn-default">
+                            <span class="glyphicon glyphicon-user"></span> User
+                        </button></a>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div style="width: auto; height: auto">
+
+    <canvas width="100%" height="100%" class="flare"></canvas>
+    <canvas width="100%" height="100%" class="snow"></canvas>
+    <canvas width="100%" height="100%" class="flake"></canvas>
+
+<div id="bui" class="row" align="center">
+
+
+    <p>楚天千里清秋，水随天去秋无际。</p>
+    <p>遥岑远目，献愁供恨，玉簪螺髻。</p>
+    <p>落日楼头，断鸿声里，江南游子。</p>
+    <p>把吴钩看了，栏杆拍遍，无人会，登临意。</p>
+    <p>休说鲈鱼堪脍，尽西风，季鹰归未？</p>
+    <p>求田问舍，怕应羞见，刘郎才气。</p>
+    <p>可惜流年，忧愁风雨，树犹如此！</p>
+    <p>倩何人唤取，红巾翠袖，揾英雄泪！</p>
+</div>
+</div>
+<!--<iframe src="http://localhost:8080/copyright" scrolling="no" frameborder="0" height="10%"
+        width="100%" allowtransparency="true"  border="0" style="width:100%;margin-top: 150px; ">
+        </iframe>-->
+</body>
+</html>
+        
